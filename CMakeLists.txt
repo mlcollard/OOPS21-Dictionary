@@ -11,7 +11,7 @@ project(dictionary)
 set(CMAKE_CXX_STANDARD 17)
 
 # Dictionary program
-set(SOURCE Dictionary.cpp WordProcessor.cpp)
+set(SOURCE Dictionary.cpp DictionaryWordProcessor.cpp WordProcessor.cpp)
 add_executable(dictionary ${SOURCE})
 
 # Demo run command
