@@ -11,8 +11,10 @@
 #include <memory>
 
 // constructor with input stream and processWord function
-WordProcessor::WordProcessor(std::istream& in, std::function<bool(const std::string& word)> processWord)
-    : input(in), processWord(processWord)
+WordProcessor::WordProcessor(std::istream& in,
+    std::function<bool(const std::string& word)> processWord,
+    std::function<void(int position)> progress)
+    : input(in), processWord(processWord), progress(progress)
 {}
 
 // read all the words from a file and apply process() to them
@@ -41,11 +43,17 @@ void WordProcessor::read() {
 
     // read and process all words in the file
     std::string word;
+    int position = 0;
     while (input >> word) {
 
         // words must begin with an alphabetic character
         if (!isalpha(word[0]))
             continue;
+
+        // update optional progress
+        ++position;
+        if (progress)
+            progress(position);
 
         // apply the processing stopping if false
         if (!processWord(word))

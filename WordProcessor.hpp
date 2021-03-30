@@ -14,7 +14,9 @@ class WordProcessor {
 public:
 
     // constructor with input stream and processWord function
-    WordProcessor(std::istream& in, std::function<bool(const std::string& word)> processWord);
+    WordProcessor(std::istream& in,
+        std::function<bool(const std::string& word)> processWord,
+        std::function<void(int position)> progress = nullptr);
 
     // read the words and apply the processWord
     void read();
@@ -22,6 +24,7 @@ public:
 private:
     std::istream& input;
     std::function<bool(const std::string& word)> processWord;
+    std::function<void(int position)> progress;
 };
 
 #endif
