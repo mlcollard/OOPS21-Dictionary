@@ -1,7 +1,7 @@
 /*
-	WordProcessor.hpp
+    WordProcessor.hpp
 
-	Declarations for reading words from files
+    Declarations for reading words from files
 */
 
 #ifndef INCLUDED_WORDPROCESSOR_HPP
@@ -14,17 +14,13 @@ class WordProcessor {
 public:
 
     // constructor with input stream and processWord function
-    WordProcessor(std::istream& in,
-        std::function<bool(const std::string& word)> processWord,
-        std::function<void(int position)> progress = nullptr);
+    WordProcessor(std::istream& in);
 
     // read the words and apply the processWord
     void read();
 
 private:
     std::istream& input;
-    std::function<bool(const std::string& word)> processWord;
-    std::function<void(int position)> progress;
 };
 
 #endif
