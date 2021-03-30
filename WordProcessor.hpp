@@ -19,6 +19,9 @@ public:
     // read the words and apply the processWord
     void read();
 
+    // destructor
+    virtual ~WordProcessor() = default;
+
 private:
     std::istream& input;
 };
