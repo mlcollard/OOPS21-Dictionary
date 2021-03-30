@@ -17,7 +17,7 @@ add_executable(dictionary ${SOURCE})
 # Demo run command
 add_custom_target(run
         COMMENT "Run demo"
-        COMMAND ./dictionary ${CMAKE_SOURCE_DIR}/dictionary.cpp
+        COMMAND ./dictionary ${CMAKE_SOURCE_DIR}/Dictionary.cpp
         DEPENDS dictionary
         USES_TERMINAL
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
