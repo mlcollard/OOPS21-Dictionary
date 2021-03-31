@@ -15,6 +15,8 @@
 
 class DictionaryWordProcessor : public WordProcessor {
 public:
+
+    // constructor with input stream
     DictionaryWordProcessor(std::istream& in);
 
     // output words to out stream

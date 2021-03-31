@@ -6,7 +6,7 @@
 
 #include "DictionaryWordProcessor.hpp"
 
-// constructor with input stream and processWord function
+// constructor with input stream
 DictionaryWordProcessor::DictionaryWordProcessor(std::istream& in)
     : WordProcessor(in)
 {}
