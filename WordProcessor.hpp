@@ -13,7 +13,7 @@
 class WordProcessor {
 public:
 
-    // constructor with input stream and processWord function
+    // constructor with input stream
     WordProcessor(std::istream& in);
 
     // read the words and apply the processWord

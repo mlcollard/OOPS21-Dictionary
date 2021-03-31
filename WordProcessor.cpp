@@ -10,7 +10,7 @@
 #include <locale>
 #include <memory>
 
-// constructor with input stream and processWord function
+// constructor with input stream
 WordProcessor::WordProcessor(std::istream& in)
     : input(in)
 {}
